@@ -96,30 +96,29 @@ async function apiRequest<T>(
     }
 
     if (response.status === 403) {
-      // Forbidden - user doesn't have permission
+      let errorMsg: string;
       try {
         const errorData = await response.json();
-        const errorMsg =
+        errorMsg =
           errorData.message || errorData.error || "Access forbidden";
-        throw new Error(
-          `Permission denied: ${errorMsg}. You may need admin privileges to perform this action.`,
-        );
       } catch {
-        throw new Error(
-          "Permission denied: You do not have permission to perform this action. Admin privileges may be required.",
-        );
+        errorMsg = "Access forbidden";
       }
+      throw new Error(
+        `Permission denied: ${errorMsg}. You may need admin privileges to perform this action.`,
+      );
     }
 
     // Try to parse error response
+    let apiErrorMsg: string;
     try {
       const errorData = await response.json();
-      throw new Error(
-        errorData.message || errorData.error || "API request failed",
-      );
+      apiErrorMsg =
+        errorData.message || errorData.error || "API request failed";
     } catch {
       throw new Error(`API request failed with status ${response.status}`);
     }
+    throw new Error(apiErrorMsg);
   }
 
   // Parse JSON response
