@@ -47,6 +47,7 @@ export default defineConfig({
       reporter: ['text', 'text-summary', 'html'],
       include: [
         'src/shared/api/client.ts',
+        'src/shared/config/api.ts',
         'src/shared/contexts/AuthContext.tsx',
         'src/shared/hooks/useOptimisticData.ts',
         'src/shared/utils/errorHandler.ts',
