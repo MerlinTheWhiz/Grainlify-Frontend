@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 import { useModeAnimation } from "react-theme-switch-animation";
@@ -53,7 +54,7 @@ export function Navbar() {
                   : "text-[#7a6b5a] hover:text-[#c9983a]"
               }`}
             >
-              Features
+              <FormattedMessage id="landingNav.features" />
             </a>
             <a
               href="#how-it-works"
@@ -63,7 +64,7 @@ export function Navbar() {
                   : "text-[#7a6b5a] hover:text-[#c9983a]"
               }`}
             >
-              How it Works
+              <FormattedMessage id="landingNav.howItWorks" />
             </a>
             <a
               href="#why-choose-us"
@@ -73,7 +74,7 @@ export function Navbar() {
                   : "text-[#7a6b5a] hover:text-[#c9983a]"
               }`}
             >
-              Why Choose Us
+              <FormattedMessage id="landingNav.whyChooseUs" />
             </a>
             <a
               href="#testimonials"
@@ -83,7 +84,7 @@ export function Navbar() {
                   : "text-[#7a6b5a] hover:text-[#c9983a]"
               }`}
             >
-              Testimonials
+              <FormattedMessage id="landingNav.testimonials" />
             </a>
           </div>
 
@@ -119,7 +120,7 @@ export function Navbar() {
                       : "text-[#2d2820] hover:text-[#c9983a]"
                   }`}
                 >
-                  Dashboard
+                  <FormattedMessage id="landingNav.dashboard" />
                 </Link>
                 <button
                   onClick={logout}
@@ -129,7 +130,7 @@ export function Navbar() {
                       : "text-[#2d2820] hover:text-[#c9983a]"
                   }`}
                 >
-                  Sign Out
+                  <FormattedMessage id="landingNav.signOut" />
                 </button>
               </>
             ) : (
@@ -137,7 +138,7 @@ export function Navbar() {
                 to="/signin"
                 className="px-5 py-2.5 rounded-[12px] bg-gradient-to-r from-[#c9983a] to-[#d4af37] text-white font-medium hover:shadow-2xl hover:shadow-[#c9983a]/50 transition-all"
               >
-                Get Started
+                <FormattedMessage id="landingNav.getStarted" />
               </Link>
             )}
           </div>
@@ -169,7 +170,7 @@ export function Navbar() {
               }`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              Features
+              <FormattedMessage id="landingNav.features" />
             </a>
             <a
               href="#how-it-works"
@@ -180,7 +181,7 @@ export function Navbar() {
               }`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              How it Works
+              <FormattedMessage id="landingNav.howItWorks" />
             </a>
             <a
               href="#why-choose-us"
@@ -191,7 +192,7 @@ export function Navbar() {
               }`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              Why Choose Us
+              <FormattedMessage id="landingNav.whyChooseUs" />
             </a>
             <a
               href="#testimonials"
@@ -202,7 +203,7 @@ export function Navbar() {
               }`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              Testimonials
+              <FormattedMessage id="landingNav.testimonials" />
             </a>
 
             {/* Theme Toggle Mobile */}
@@ -230,7 +231,7 @@ export function Navbar() {
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Dashboard
+                  <FormattedMessage id="landingNav.dashboard" />
                 </Link>
                 <button
                   onClick={() => {
@@ -243,7 +244,7 @@ export function Navbar() {
                       : "text-[#2d2820] hover:text-[#c9983a]"
                   }`}
                 >
-                  Sign Out
+                  <FormattedMessage id="landingNav.signOut" />
                 </button>
               </>
             ) : (
@@ -252,7 +253,7 @@ export function Navbar() {
                 className="block px-3 py-2 rounded-[12px] bg-gradient-to-r from-[#c9983a] to-[#d4af37] text-white font-medium text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Get Started
+                <FormattedMessage id="landingNav.getStarted" />
               </Link>
             )}
           </div>
